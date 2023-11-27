@@ -4,6 +4,11 @@ import green_marker from "src/assets/green_marker.png"
 import yellow_marker from "src/assets/yellow_marker.png"
 import red_marker from "src/assets/red_marker.png"
 
+export const enum Status {
+  Active = 0,
+  Inactive = 1,
+}
+
 const mockCords1 : CordsPair = {
   xCord: 60.038353, 
   yCord: 30.322507
@@ -14,20 +19,37 @@ const mockCords2 : CordsPair = {
   yCord: 30.325256
 }
 
+const mockCords3 : CordsPair = {
+  xCord: 60.038760, 
+  yCord: 30.325756
+}
+
+const mockCords4 : CordsPair = {
+  xCord: 60.038960, 
+  yCord: 30.325956
+}
+
+const mockCords5 : CordsPair = {
+  xCord: 60.033360, 
+  yCord: 32.325956
+}
+
 export const markersData : DeviceData[] = [
   {
     id: 1,
     curCords: mockCords1,
-    previousCords: [mockCords2, mockCords2],
+    previousCords: [mockCords2],
+    previousCordsStatus: [Status.Active],
     lastActivity: "19.10.2022 23:12:00",
     status: "Активно",
   },
   {
-    id: 2,
-    curCords: mockCords2,
-    previousCords: [mockCords1, mockCords1, mockCords1],
-    lastActivity: "19.10.2022 18:12:00",
-    status: "Неактивно",
+    id: 1,
+    curCords: mockCords3,
+    previousCords: [mockCords4, mockCords5],
+    previousCordsStatus: [Status.Active, Status.Active],
+    lastActivity: "19.10.2022 23:12:00",
+    status: "Активно",
   },
 ]
 
