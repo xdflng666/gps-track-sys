@@ -9,7 +9,11 @@ module.exports = [
     target: "web",
     output: {
       path: path.resolve(__dirname, "dist"),
+      publicPath: '/',
       filename: "[name].bundle.js",
+    },
+    devServer: {
+      historyApiFallback: true,
     },
     plugins: [
       new HtmlWebpackPlugin({

@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack server --open",
+    "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
     "dev": "npm-run-all -s build start"
   },
   "keywords": [],
@@ -46,6 +46,7 @@
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-leaflet": "^4.2.1"
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.20.0"
   }
 }

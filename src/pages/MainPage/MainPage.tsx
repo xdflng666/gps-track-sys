@@ -14,10 +14,6 @@ import {
 import logo from "src/assets/logo.png"
 import RoutingMachine from "src/components/RoutingMachine"
 import L from "leaflet"
-/*const waypointsArray = [
-  L.latLng(60.038353, 30.322507),
-  L.latLng(60.038360, 30.325256),
-]*/
 
 const MainPage = () => {
   const showMore = (id: number) => {
