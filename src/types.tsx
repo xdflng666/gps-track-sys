@@ -1,4 +1,4 @@
-import { Status } from "./data"
+import { Role, Status } from "./data"
 
 type CordsPair = {
     xCord: number
@@ -14,4 +14,15 @@ type DeviceData = {
     status: string
 }
 
-export type {DeviceData, CordsPair}
+type User = {
+  login: string,
+  password: string,
+  role: Role
+}
+
+type LoginAndPassword = {
+  login: string,
+  password: string,
+}
+
+export type {DeviceData, CordsPair, User, LoginAndPassword}

@@ -1,4 +1,4 @@
-import { CordsPair, DeviceData } from "./types"
+import { CordsPair, DeviceData, User } from "./types"
 import { Icon } from "leaflet"
 import green_marker from "src/assets/green_marker.png"
 import yellow_marker from "src/assets/yellow_marker.png"
@@ -7,6 +7,14 @@ import red_marker from "src/assets/red_marker.png"
 export const enum Status {
   Active = 0,
   Inactive = 1,
+}
+
+export const enum Role {
+  Admin = 0,
+  User = 1,
+  LoggedOut = -1,
+  HasErrors = -2,
+  Unloaded = -3,
 }
 
 const mockCords1 : CordsPair = {
@@ -52,6 +60,19 @@ export const markersData : DeviceData[] = [
     status: "Активно",
   },
 ]
+
+export const users : User[] = [
+  {
+    login: "user",
+    password: "user",
+    role: Role.User
+  },
+  {
+    login: "admin",
+    password: "admin",
+    role: Role.Admin
+  }
+] 
 
 export const green_icon = new Icon({
   iconUrl: green_marker,
