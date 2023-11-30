@@ -20,6 +20,14 @@ export const logInUser = async (loginAndPassword: LoginAndPassword) => {
         curUser = user
       }
     })
+    localStorage.setItem("curUser", JSON.stringify(curUser))
+    resolve(curUser)
+  })
+}
+
+export const loadUser = async () => {
+  return new Promise<User>((resolve) => {
+    const curUser: User = JSON.parse(localStorage.getItem("curUser") || "[]")
     resolve(curUser)
   })
 }

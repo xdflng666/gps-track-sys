@@ -38714,15 +38714,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 /* harmony import */ var src_pages_MainPage_MainPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/pages/MainPage/MainPage */ "./src/pages/MainPage/MainPage.tsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _pages_Login_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Login/Login */ "./src/pages/Login/Login.tsx");
+/* harmony import */ var src_pages_Admin_UserList_UserList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/pages/Admin/UserList/UserList */ "./src/pages/Admin/UserList/UserList.tsx");
+/* harmony import */ var src_slices_userSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/slices/userSlice */ "./src/slices/userSlice.ts");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var src_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/hooks */ "./src/hooks.ts");
+/* harmony import */ var src_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/data */ "./src/data.tsx");
+
+
+
+
+
+
 
 
 
 
 const App = () => {
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Routes, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, { path: "/map", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_pages_MainPage_MainPage__WEBPACK_IMPORTED_MODULE_1__["default"], {}) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, { path: "*", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_pages_Login_Login__WEBPACK_IMPORTED_MODULE_2__["default"], {}) })] }) }));
+    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
+    (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(() => {
+        dispatch((0,src_slices_userSlice__WEBPACK_IMPORTED_MODULE_4__.load)());
+    }, [dispatch]);
+    const userStatus = (0,src_hooks__WEBPACK_IMPORTED_MODULE_7__.useAppSelector)((state) => state.user.userData.role);
+    if (userStatus != src_data__WEBPACK_IMPORTED_MODULE_8__.Role.Unloaded) {
+        return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Routes, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, { path: "*", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_pages_Login_Login__WEBPACK_IMPORTED_MODULE_2__["default"], {}) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, { path: "/map", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_pages_MainPage_MainPage__WEBPACK_IMPORTED_MODULE_1__["default"], {}) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, { path: "/admin/users", element: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_pages_Admin_UserList_UserList__WEBPACK_IMPORTED_MODULE_3__["default"], {}) })] }) }));
+    }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
@@ -38773,6 +38793,224 @@ const createRoutineMachineLayer = (props) => {
 };
 const RoutingMachine = (0,_react_leaflet_core__WEBPACK_IMPORTED_MODULE_2__.createControlComponent)(createRoutineMachineLayer);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RoutingMachine);
+
+
+/***/ }),
+
+/***/ "./src/components/Sidebar/Sidebar.styled.tsx":
+/*!***************************************************!*\
+  !*** ./src/components/Sidebar/Sidebar.styled.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   SidebarContainer: () => (/* binding */ SidebarContainer),
+/* harmony export */   SidebarDivider: () => (/* binding */ SidebarDivider),
+/* harmony export */   SidebarLogo: () => (/* binding */ SidebarLogo),
+/* harmony export */   SidebarLogoText: () => (/* binding */ SidebarLogoText),
+/* harmony export */   SidebarNavigation: () => (/* binding */ SidebarNavigation),
+/* harmony export */   SidebarNavigationDestinationContainer: () => (/* binding */ SidebarNavigationDestinationContainer),
+/* harmony export */   SidebarNavigationIcon: () => (/* binding */ SidebarNavigationIcon),
+/* harmony export */   SidebarNavigationLi: () => (/* binding */ SidebarNavigationLi),
+/* harmony export */   SidebarNavigationList: () => (/* binding */ SidebarNavigationList),
+/* harmony export */   SidebarNavigationText: () => (/* binding */ SidebarNavigationText),
+/* harmony export */   SidebarPurpleLogoText: () => (/* binding */ SidebarPurpleLogoText),
+/* harmony export */   UserDataContainer: () => (/* binding */ UserDataContainer),
+/* harmony export */   UserDataIcon: () => (/* binding */ UserDataIcon),
+/* harmony export */   UserDataName: () => (/* binding */ UserDataName),
+/* harmony export */   UserDataRole: () => (/* binding */ UserDataRole),
+/* harmony export */   UserDataTextWrapper: () => (/* binding */ UserDataTextWrapper)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+const SidebarContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div `
+  width: 280px;
+  padding: 24px, 0px, 24px, 0px;
+  gap: 24px;
+  height: 100vh;
+  background: #111827;
+`;
+const SidebarLogo = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img `
+  width: 35px;
+  height: 43.79px;
+  top: 31.37px;
+  left: 25px;
+  position: absolute;
+`;
+const SidebarLogoText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p `
+  width: 106px;
+  height: 38px;
+  top: 8px;
+  left: 76px;
+  font-family: "Inter", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  position: absolute;
+  color: #ffffff;
+  white-space: nowrap;
+`;
+const SidebarPurpleLogoText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span `
+  color: #6366f1;
+  white-space: wrap;
+`;
+const SidebarDivider = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].hr `
+  width: inherit;
+  top: 112px;
+  position: absolute;
+  border: 1px;
+  background: #9da4ae7d;
+  border: 1px solid #9da4ae7d;
+`;
+const SidebarNavigation = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav `
+  width: 240px;
+  position: absolute;
+  top: 120px;
+  left: -20px;
+  height: Fill (978px);
+  padding: 0px, 16px, 0px, 16px;
+  gap: 16px;
+`;
+const SidebarNavigationList = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].ul `
+  position: absolute;
+  width: inherit;
+  height: 348px;
+  list-style-type: none;
+`;
+const SidebarNavigationLi = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].li `
+  padding: 0 0 4px 0;
+`;
+const SidebarNavigationDestinationContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].a `
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  &:hover {
+    background-color: rgb(131, 131, 131);
+  }
+`;
+const SidebarNavigationIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img `
+  height: 25px;
+  width: 25px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: center;
+  position:relative;
+  top:15%;
+
+`;
+const SidebarNavigationText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span `
+  position: relative;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0em;
+  color: #dadada;
+  white-space: nowrap
+`;
+const UserDataContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div `
+  width: 256px;
+  height: 81px;
+  top: 780px;
+  left: 10px;
+  position:absolute;
+  border-radius: 10px;
+  background: #252E3E;
+  display:flex;
+  flex-direction:row;
+`;
+const UserDataIcon = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].img `
+  height: 56px;
+  width: 56px;
+  text-align: center;
+  position:relative;
+  top: 15%;
+  padding-left: 10px;
+`;
+const UserDataName = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span `
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0em;
+  color: #dadada;
+  white-space: wrap;
+`;
+const UserDataRole = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span `
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0em;
+  color: grey;
+`;
+const UserDataTextWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div `
+  display: flex;
+  flex-direction: column;
+  padding: 14px 10px 10px 10px;
+`;
+
+
+/***/ }),
+
+/***/ "./src/components/Sidebar/Sidebar.tsx":
+/*!********************************************!*\
+  !*** ./src/components/Sidebar/Sidebar.tsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/components/Sidebar/Sidebar.styled */ "./src/components/Sidebar/Sidebar.styled.tsx");
+/* harmony import */ var src_assets_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/logo.png */ "./src/assets/logo.png");
+/* harmony import */ var src_assets_users_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/users.png */ "./src/assets/users.png");
+/* harmony import */ var src_assets_devices_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/devices.png */ "./src/assets/devices.png");
+/* harmony import */ var src_assets_addUser_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/assets/addUser.png */ "./src/assets/addUser.png");
+/* harmony import */ var src_assets_userDataIcon_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/assets/userDataIcon.png */ "./src/assets/userDataIcon.png");
+/* harmony import */ var src_hooks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/hooks */ "./src/hooks.ts");
+/* harmony import */ var src_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/data */ "./src/data.tsx");
+
+
+
+
+
+
+
+
+
+const Sidebar = () => {
+    const roleToString = (userRole) => {
+        if (userRole == src_data__WEBPACK_IMPORTED_MODULE_8__.Role.Admin) {
+            return "Администратор";
+        }
+        else {
+            return "Пользователь";
+        }
+    };
+    const user = (0,src_hooks__WEBPACK_IMPORTED_MODULE_7__.useAppSelector)((state) => state.user.userData);
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarLogo, { src: src_assets_logo_png__WEBPACK_IMPORTED_MODULE_2__ }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarLogoText, { children: ["GPS ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarPurpleLogoText, { children: "Tracking " }), "System"] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarDivider, {}), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigation, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationList, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationLi, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationDestinationContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationIcon, { src: src_assets_users_png__WEBPACK_IMPORTED_MODULE_3__ }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationText, { children: "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u0438" })] }) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationLi, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationDestinationContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationIcon, { src: src_assets_devices_png__WEBPACK_IMPORTED_MODULE_4__ }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationText, { children: "\u0423\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u0430" })] }) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationLi, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationDestinationContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationIcon, { src: src_assets_addUser_png__WEBPACK_IMPORTED_MODULE_5__ }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.SidebarNavigationText, { children: "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044F \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F" })] }) })] }) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.UserDataContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.UserDataIcon, { src: src_assets_userDataIcon_png__WEBPACK_IMPORTED_MODULE_6__ }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.UserDataTextWrapper, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.UserDataName, { children: [user.login, " "] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar_styled__WEBPACK_IMPORTED_MODULE_1__.UserDataRole, { children: roleToString(user.role) })] })] })] }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
 
 
 /***/ }),
@@ -38902,6 +39140,29 @@ const useAppSelector = react_redux__WEBPACK_IMPORTED_MODULE_0__.useSelector;
 
 /***/ }),
 
+/***/ "./src/pages/Admin/UserList/UserList.tsx":
+/*!***********************************************!*\
+  !*** ./src/pages/Admin/UserList/UserList.tsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var src_components_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/components/Sidebar/Sidebar */ "./src/components/Sidebar/Sidebar.tsx");
+
+
+const AdminUsersList = () => {
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(src_components_Sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {}) }));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminUsersList);
+
+
+/***/ }),
+
 /***/ "./src/pages/Login/Login.styled.tsx":
 /*!******************************************!*\
   !*** ./src/pages/Login/Login.styled.tsx ***!
@@ -38926,7 +39187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 const RightSideContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div `
-  background-color:  #090E23;
+  background-color: #090e23;
   width: 50%;
   height: 100vh;
   float: right;
@@ -38940,11 +39201,11 @@ const LoginText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].p `
   font-weight: 700;
   line-height: 183.95px;
   text-align: left;
-  color: #FFFFFF;
+  color: #ffffff;
 `;
 const PurpleLoginText = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].span `
-  color:#6366F1;
-  white-space:wrap;
+  color: #6366f1;
+  white-space: wrap;
 `;
 const LeftSideContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div `
   flex: 1 1 auto;
@@ -38961,15 +39222,15 @@ const LoginForm = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].form
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin:auto;
-  width : 400px;
+  margin: auto;
+  width: 400px;
 `;
 const LoginHeader = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h4 `
-    margin: 0px 0px 20px 0px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1.2;
+  margin: 0px 0px 20px 0px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
 `;
 const LoginDiv = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div `
   max-width: 550px;
@@ -38981,7 +39242,7 @@ const InputContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4375em;
-  font-family: "Inter", sans-serif;;
+  font-family: "Inter", sans-serif;
   color: rgb(17, 25, 39);
   box-sizing: border-box;
   cursor: text;
@@ -38999,19 +39260,12 @@ const InputContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 `;
 const LoginButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].button `
-  align-items: center;
-  justify-content: center;
   position: relative;
-  box-sizing: border-box;
-  outline: 0px;
   border: 0px;
-  margin: 0px 0px 0px;
   cursor: pointer;
   vertical-align: middle;
-  appearance: none;
-  text-decoration: none;
   font-weight: 600;
-  font-family:"Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.9375rem;
   line-height: 1.75;
   min-width: 64px;
@@ -39022,9 +39276,30 @@ const LoginButton = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].bu
   border-radius: 12px;
   text-transform: none;
   padding: 11px 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   &:hover {
     background-color: rgb(43, 45, 168);
+  }
+`;
+const LoginInput = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].input `
+  font-family: inherit;
+  border: 0px;
+  background: none;
+  height: 1.4375em;
+  min-width: 0px;
+  width: 100%;
+  animation-name: mui-auto-fill-cancel;
+  animation-duration: 10ms;
+  padding: 25px 12px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  &:focus {
+    outline: 0px;
   }
 `;
 const LoginLabel = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].label `
@@ -39044,35 +39319,9 @@ const LoginLabel = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].lab
   transform: translate(12px, 7px) scale(0.75);
   pointer-events: auto;
   user-select: none;
-`;
-const LoginInput = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].input `
-  font-style: inherit;
-  font-variant: inherit;
-  font-stretch: inherit;
-  font-family: inherit;
-  font-optical-sizing: inherit;
-  font-kerning: inherit;
-  font-feature-settings: inherit;
-  font-variation-settings: inherit;
-  letter-spacing: inherit;
-  color: currentcolor;
-  border: 0px;
-  box-sizing: content-box;
-  background: none;
-  height: 1.4375em;
-  margin: 0px;
-  -webkit-tap-highlight-color: transparent;
-  display: block;
-  min-width: 0px;
-  width: 100%;
-  animation-name: mui-auto-fill-cancel;
-  animation-duration: 10ms;
-  padding: 25px 12px 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 24px;
-  &:focus {
-    outline: 0px;
+  transition: 0.2s ease all;
+  ${LoginInput}:focus ~ & {
+    color: rgb(43, 45, 168);
   }
 `;
 
@@ -39121,6 +39370,8 @@ const Login = () => {
         }
         else if (curUser.role == src_data__WEBPACK_IMPORTED_MODULE_6__.Role.User)
             navigate("/map");
+        else if (curUser.role == src_data__WEBPACK_IMPORTED_MODULE_6__.Role.Admin)
+            navigate("/admin/users");
     }, [curUser.role, navigate]);
     const handleLogin = () => {
         if (userData.login == "" || userData.password == "") {
@@ -39140,7 +39391,7 @@ const Login = () => {
         newUserData.password = event.target.value;
         setUserData(newUserData);
     }, [userData]);
-    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LeftSideContainer, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginDiv, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginForm, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginHeader, { children: "\u0412\u043E\u0439\u0442\u0438" }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.InputContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginLabel, { children: "\u041B\u043E\u0433\u0438\u043D" }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginInput, { type: "text", onChange: handleInputLogin })] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.InputContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginLabel, { children: "\u041F\u0430\u0440\u043E\u043B\u044C" }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginInput, { type: "password", onChange: handleInputPassword })] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginButton, { onClick: handleLogin, children: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C" })] }) }) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.RightSideContainer, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginText, { children: ["GPS", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.PurpleLoginText, { children: " Tracking " }), "System"] }) })] }));
+    return ((0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LeftSideContainer, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginDiv, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginForm, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginHeader, { children: "\u0412\u043E\u0439\u0442\u0438" }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.InputContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginInput, { type: "text", onChange: handleInputLogin }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginLabel, { children: "\u041B\u043E\u0433\u0438\u043D" })] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.InputContainer, { children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginInput, { type: "password", onChange: handleInputPassword }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginLabel, { children: "\u041F\u0430\u0440\u043E\u043B\u044C" })] }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginButton, { onClick: handleLogin, children: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C" })] }) }) }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.RightSideContainer, { children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.LoginText, { children: ["GPS", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_Login_styled__WEBPACK_IMPORTED_MODULE_2__.PurpleLoginText, { children: " Tracking " }), "System"] }) })] }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
 
@@ -39279,11 +39530,12 @@ const MainPage = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   load: () => (/* binding */ load),
 /* harmony export */   logIn: () => (/* binding */ logIn)
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 /* harmony import */ var src_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/data */ "./src/data.tsx");
-/* harmony import */ var _userStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./userStorage */ "./src/slices/userStorage.ts");
+/* harmony import */ var src_slices_userStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/slices/userStorage */ "./src/slices/userStorage.ts");
 
 
 
@@ -39292,7 +39544,15 @@ const initialState = {
 };
 const logIn = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.createAsyncThunk)("userSlice/logIn", async (loginAndPassword, thunkAPI) => {
     try {
-        return await (0,_userStorage__WEBPACK_IMPORTED_MODULE_1__.logInUser)(loginAndPassword);
+        return await (0,src_slices_userStorage__WEBPACK_IMPORTED_MODULE_1__.logInUser)(loginAndPassword);
+    }
+    catch (e) {
+        return thunkAPI.rejectWithValue(e);
+    }
+});
+const load = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.createAsyncThunk)("userSlice/load", async (params, thunkAPI) => {
+    try {
+        return await (0,src_slices_userStorage__WEBPACK_IMPORTED_MODULE_1__.loadUser)();
     }
     catch (e) {
         return thunkAPI.rejectWithValue(e);
@@ -39305,8 +39565,12 @@ const userSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.createSlice)(
     extraReducers: (builder) => {
         builder.addCase(logIn.fulfilled, (state, action) => {
             state.userData = action.payload;
-            console.log("user loaded");
-        });
+            console.log("user logged in");
+        }),
+            builder.addCase(load.fulfilled, (state, action) => {
+                state.userData = action.payload;
+                console.log("user loaded");
+            });
     }
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userSlice.reducer);
@@ -39323,6 +39587,7 @@ const userSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.createSlice)(
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   loadUser: () => (/* binding */ loadUser),
 /* harmony export */   logInUser: () => (/* binding */ logInUser)
 /* harmony export */ });
 /* harmony import */ var src_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/data */ "./src/data.tsx");
@@ -39342,6 +39607,13 @@ const logInUser = async (loginAndPassword) => {
                 curUser = user;
             }
         });
+        localStorage.setItem("curUser", JSON.stringify(curUser));
+        resolve(curUser);
+    });
+};
+const loadUser = async () => {
+    return new Promise((resolve) => {
+        const curUser = JSON.parse(localStorage.getItem("curUser") || "[]");
         resolve(curUser);
     });
 };
@@ -39428,6 +39700,28 @@ module.exports = __webpack_require__.p + "a0c6cc1401c107b501ef.png";
 
 /***/ }),
 
+/***/ "./src/assets/addUser.png":
+/*!********************************!*\
+  !*** ./src/assets/addUser.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "937e151b0fd70ce24976.png";
+
+/***/ }),
+
+/***/ "./src/assets/devices.png":
+/*!********************************!*\
+  !*** ./src/assets/devices.png ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "0006ec5144b02cb240cc.png";
+
+/***/ }),
+
 /***/ "./src/assets/green_marker.png":
 /*!*************************************!*\
   !*** ./src/assets/green_marker.png ***!
@@ -39458,6 +39752,28 @@ module.exports = __webpack_require__.p + "89f925be9dc447d48713.png";
 
 "use strict";
 module.exports = __webpack_require__.p + "0dfcb45772a57c6b62b6.png";
+
+/***/ }),
+
+/***/ "./src/assets/userDataIcon.png":
+/*!*************************************!*\
+  !*** ./src/assets/userDataIcon.png ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "706b8c354d72567956b2.png";
+
+/***/ }),
+
+/***/ "./src/assets/users.png":
+/*!******************************!*\
+  !*** ./src/assets/users.png ***!
+  \******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "8e03b9337171680aacee.png";
 
 /***/ }),
 

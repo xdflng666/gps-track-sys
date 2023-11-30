@@ -22,6 +22,7 @@ const Login = () => {
       alert("Введены неверные данные!")
     }
     else if (curUser.role == Role.User) navigate("/map")
+    else if (curUser.role == Role.Admin) navigate("/admin/users")
   }, [curUser.role, navigate])
   
 
@@ -59,12 +60,12 @@ const Login = () => {
           <LoginForm>
             <LoginHeader>Войти</LoginHeader>
             <InputContainer>
-              <LoginLabel>Логин</LoginLabel>
               <LoginInput type="text" onChange={handleInputLogin}></LoginInput>
+              <LoginLabel>Логин</LoginLabel>
             </InputContainer>
             <InputContainer>
-              <LoginLabel>Пароль</LoginLabel>
               <LoginInput type="password" onChange={handleInputPassword}></LoginInput>
+              <LoginLabel>Пароль</LoginLabel>
             </InputContainer>
             <LoginButton onClick={handleLogin}>Продолжить</LoginButton>
           </LoginForm>

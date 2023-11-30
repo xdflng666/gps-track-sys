@@ -11,7 +11,7 @@ import {
   MarkerInfoDiv,
   PurpleLogoText,
 } from "src/pages/MainPage/MainPage.styled"
-import logo from "src/assets/logo.png"
+import logo from "src/assets/logo.png" 
 import RoutingMachine from "src/components/RoutingMachine"
 import L from "leaflet"
 
