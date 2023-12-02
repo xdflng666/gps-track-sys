@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { Role } from "src/data"
 import { LoginAndPassword, User } from "src/types"
-import { loadUser, logInUser } from "src/slices/userStorage"
+import { loadUser, logInUser, logOutUser } from "src/slices/userStorage"
 
 export interface UserState {
   userData: User;
@@ -16,6 +16,17 @@ export const logIn = createAsyncThunk<User, LoginAndPassword>(
   async (loginAndPassword: LoginAndPassword, thunkAPI) => {
     try {
       return await logInUser(loginAndPassword)
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e)
+    }
+  }
+)
+
+export const logOut = createAsyncThunk<User, void>(
+  "userSlice/logOut",
+  async (params: void, thunkAPI) => {
+    try {
+      return await logOutUser()
     } catch (e) {
       return thunkAPI.rejectWithValue(e)
     }
@@ -45,6 +56,10 @@ const userSlice = createSlice({
     builder.addCase(load.fulfilled, (state, action) => {
       state.userData = action.payload
       console.log("user loaded")
+    }),
+    builder.addCase(logOut.fulfilled, (state, action) => {
+      state.userData = action.payload
+      console.log("user logged out")
     })
   }
 })

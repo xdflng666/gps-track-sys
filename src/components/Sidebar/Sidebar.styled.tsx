@@ -67,12 +67,13 @@ export const SidebarNavigationLi = styled.li`
   padding: 0 0 4px 0;
 `
 
-export const SidebarNavigationDestinationContainer = styled.a`
+export const SidebarNavigationDestinationContainer = styled.a<{$isActive: boolean}>`
   width: 100%;
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
   display: inline-block;
+  background-color: ${(props) => props.$isActive ? "rgb(131, 131, 131)" : "transparent"};
   transition:
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
@@ -110,7 +111,7 @@ export const SidebarNavigationText = styled.span`
 export const UserDataContainer = styled.div`
   width: 240px;
   height: 81px;
-  top: 88vh;
+  bottom: 20px;
   left: 18px;
   position:absolute;
   border-radius: 10px;

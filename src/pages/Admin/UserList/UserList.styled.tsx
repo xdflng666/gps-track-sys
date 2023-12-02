@@ -1,3 +1,5 @@
+import { TableHead, Typography } from "@mui/material"
+import { MRT_GlobalFilterTextField } from "material-react-table"
 import styled from "styled-components"
 
 export const UserListPageContainer = styled.div`
@@ -5,64 +7,49 @@ export const UserListPageContainer = styled.div`
   flex-direction: row;
 `
 
+export const UserSearchTableContainer = styled.div`
+  position: relative;
+  width: 80%;
+  height: 20%;
+  top: 10px;
+  left: 20px;
+`
+
 export const UserListContainer = styled.div`
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
   height: 100vh;
 `
 
-export const UserListHeader = styled.h1`
+export const UserListHeader = styled(Typography)`
   position: relative;
   width: 378px;
   height: 75px;
-  top: 20px;
-  left: 20px;
+  top: -10px;
   font-family: "Inter", sans-serif;
-  font-size: 47px;
-  font-weight: 700;
-  line-height: 57px;
 `
 
-export const UserSearchContainer = styled.div`
-  position: relative;
-  top: 20px;
-  left: 20px;
-  width: 35%;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.4375em;
-  font-family: "Inter", sans-serif;
-  color: rgb(17, 25, 39);
-  box-sizing: border-box;
-  cursor: text;
-  display: flex;
-  background-color: transparent;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(229, 231, 235);
-  &:focus-within {
-    background-color: transparent;
-    box-shadow: rgb(99, 102, 241) 0px 0px 0px 2px;
-  }
-`
-
-export const UserSearchInput = styled.input`
+export const UserSearchInput = styled(MRT_GlobalFilterTextField)`
   font-family: inherit;
+  position: relative;
+  top: -10px;
   border: 0px;
   background: none;
   height: 1em;
   min-width: 0px;
   width: 100%;
-  animation-name: mui-auto-fill-cancel;
   animation-duration: 10ms;
   padding: 15px 15px 15px 15px;
   font-size: 14px;
   font-weight: 500;
   line-height: 24px;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(229, 231, 235);
   &:focus {
-    outline: 0px;
+    background-color: transparent;
+    box-shadow: rgb(99, 102, 241) 0px 0px 0px 2px;
   }
 `
 
@@ -72,4 +59,18 @@ export const UserSearchLabel = styled.img`
   position: relative;
   top: 10px;
   left: 10px;
+`
+
+export const UserSearchTableHead = styled(TableHead)`
+	padding: 10px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: left;
+	color: #444441;
+  background-color: rgb(248, 249, 250);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 `

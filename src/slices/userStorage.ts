@@ -31,3 +31,16 @@ export const loadUser = async () => {
     resolve(curUser)
   })
 }
+
+export const logOutUser = async () => {
+  return new Promise<User>((resolve) => {
+    const emptyUser: User = {
+      login: "",
+      password: "",
+      role: Role.LoggedOut
+    }
+
+    localStorage.setItem("curUser", JSON.stringify(emptyUser))
+    resolve(emptyUser)
+  })
+}

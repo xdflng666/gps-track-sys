@@ -25,4 +25,21 @@ type LoginAndPassword = {
   password: string,
 }
 
-export type {DeviceData, CordsPair, User, LoginAndPassword}
+type UserTableItem = {
+  name: string,
+  login: string,
+  gmail: string,
+  phoneNumber: string,
+  role: string,
+}
+
+type deviceTableItem = {
+  id: string,
+  curCords: string;
+  prevCords: string;
+  status: string,
+}
+
+
+
+export type {DeviceData, CordsPair, User, LoginAndPassword, UserTableItem, deviceTableItem}

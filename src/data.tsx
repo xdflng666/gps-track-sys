@@ -1,4 +1,4 @@
-import { CordsPair, DeviceData, User } from "./types"
+import { CordsPair, DeviceData, User, UserTableItem, deviceTableItem } from "src/types"
 import { Icon } from "leaflet"
 import green_marker from "src/assets/green_marker.png"
 import yellow_marker from "src/assets/yellow_marker.png"
@@ -15,6 +15,12 @@ export const enum Role {
   LoggedOut = -1,
   HasErrors = -2,
   Unloaded = -3,
+}
+
+export const enum Page {
+  userData = 0,
+  deviceData = 1,
+  createUser = 2,
 }
 
 const mockCords1 : CordsPair = {
@@ -73,6 +79,39 @@ export const users : User[] = [
     role: Role.Admin
   }
 ] 
+
+export const userTableData: UserTableItem[] = [
+  {
+    name: "Денис",
+    login: "admin",
+    gmail: "admin@gmail.com",
+    phoneNumber: "123456",
+    role: "Админ",
+  },
+  {
+    name: "Даня",
+    login: "user",
+    gmail: "user@gmail.com",
+    phoneNumber: "654321",
+    role: "Неадмин",
+  },
+]
+
+export const deviceTableData: deviceTableItem[] = [
+  {
+    id: "1",
+    curCords: "1.0000000, 1.0000000",
+    prevCords: "2.0000000, 2.0000000",
+    status: "Активен"
+  },
+  {
+    id: "2",
+    curCords: "3.0000000, 3.0000000",
+    prevCords: "4.0000000, 4.0000000",
+    status: "Неактивен"
+  },
+]
+
 
 export const green_icon = new Icon({
   iconUrl: green_marker,

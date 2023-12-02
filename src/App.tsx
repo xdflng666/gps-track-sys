@@ -2,6 +2,7 @@ import MainPage from "src/pages/MainPage/MainPage"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from "./pages/Login/Login"
 import UserList from "src/pages/Admin/UserList/UserList"
+import DeviceList from "src/pages/Admin/DeviceList/DeviceList"
 import { AppDispatch } from "./store"
 import { load } from "src/slices/userSlice"
 import { useEffect } from "react"
@@ -12,6 +13,7 @@ import { Role } from "src/data"
 const App = () => {
   const dispatch = useDispatch<AppDispatch>()
 
+  //localStorage.clear()
   useEffect(() => {
     dispatch(load())
   }, [dispatch])
@@ -25,6 +27,7 @@ const App = () => {
           <Route path="*" element={<Login />} />
           <Route path="/map" element={<MainPage />} />
           <Route path="/admin/users" element={<UserList />} />
+          <Route path="/admin/devices" element={<DeviceList />} />
         </Routes>
       </BrowserRouter>
     )

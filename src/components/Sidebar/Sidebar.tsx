@@ -14,27 +14,50 @@ import {
   UserDataIcon,
   UserDataName,
   UserDataRole,
-  UserDataTextWrapper
+  UserDataTextWrapper,
 } from "src/components/Sidebar/Sidebar.styled"
 import logo from "src/assets/logo.png"
 import users from "src/assets/users.png"
 import devices from "src/assets/devices.png"
 import addUser from "src/assets/addUser.png"
 import userDataIcon from "src/assets/userDataIcon.png"
+import logoutIcon from "src/assets/logout.svg"
 import { useAppSelector } from "src/hooks"
 import { User } from "src/types"
-import { Role } from "src/data"
+import { Page, Role } from "src/data"
+import { useNavigate } from "react-router-dom"
+import { logOut } from "src/slices/userSlice"
+import { useDispatch } from "react-redux"
+import { AppDispatch } from "src/store"
 
-const Sidebar = () => {
-  const roleToString = (userRole : Role) => {
-    if(userRole == Role.Admin) {
+const Sidebar = ({ curPage }: { curPage: number }) => {
+  const user: User = useAppSelector((state) => state.user.userData)
+  const navigate = useNavigate()
+  const dispatch = useDispatch<AppDispatch>()
+
+  const roleToString = (userRole: Role) => {
+    if (userRole == Role.Admin) {
       return "Администратор"
-    }
-    else {
+    } else {
       return "Пользователь"
     }
   }
-  const user: User = useAppSelector((state) => state.user.userData)
+
+  const logOutFunction = () => {
+    dispatch(logOut())
+    setTimeout(function (){
+      navigate("/login")
+    }, 200)
+  }
+
+  let userData = false
+  let deviceData = false
+  let createNewUser = false
+
+  if (curPage == Page.userData) userData = true
+  else if (curPage == Page.deviceData) deviceData = true
+  else if (curPage == Page.createUser) createNewUser = true
+
   return (
     <SidebarContainer>
       <SidebarLogo src={logo} />
@@ -46,23 +69,39 @@ const Sidebar = () => {
       <SidebarNavigation>
         <SidebarNavigationList>
           <SidebarNavigationLi>
-            <SidebarNavigationDestinationContainer>
+            <SidebarNavigationDestinationContainer
+              $isActive={userData}
+              onClick={() => navigate("/admin/users")}
+            >
               <SidebarNavigationIcon src={users} />
               <SidebarNavigationText>Пользователи</SidebarNavigationText>
             </SidebarNavigationDestinationContainer>
           </SidebarNavigationLi>
           <SidebarNavigationLi>
-            <SidebarNavigationDestinationContainer>
+            <SidebarNavigationDestinationContainer
+              $isActive={deviceData}
+              onClick={() => navigate("/admin/devices")}
+            >
               <SidebarNavigationIcon src={devices} />
               <SidebarNavigationText>Устройства</SidebarNavigationText>
             </SidebarNavigationDestinationContainer>
           </SidebarNavigationLi>
           <SidebarNavigationLi>
-            <SidebarNavigationDestinationContainer>
+            <SidebarNavigationDestinationContainer
+              $isActive={createNewUser}
+              onClick={() => navigate("/admin/register")}
+            >
               <SidebarNavigationIcon src={addUser} />
               <SidebarNavigationText>
                 Регистрация пользователя
               </SidebarNavigationText>
+            </SidebarNavigationDestinationContainer>
+            <SidebarNavigationDestinationContainer
+              $isActive={createNewUser}
+              onClick={() => logOutFunction()}
+            >
+              <SidebarNavigationIcon src={logoutIcon} />
+              <SidebarNavigationText>Выйти</SidebarNavigationText>
             </SidebarNavigationDestinationContainer>
           </SidebarNavigationLi>
         </SidebarNavigationList>
@@ -72,7 +111,7 @@ const Sidebar = () => {
         <UserDataTextWrapper>
           <UserDataName>{user.login} </UserDataName>
           <UserDataRole>{roleToString(user.role)}</UserDataRole>
-        </UserDataTextWrapper> 
+        </UserDataTextWrapper>
       </UserDataContainer>
     </SidebarContainer>
   )
