@@ -9,6 +9,7 @@ import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useAppSelector } from "src/hooks"
 import { Role } from "src/data"
+import Register from "src/pages/Admin/Register/Register"
 
 const App = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/map" element={<MainPage />} />
           <Route path="/admin/users" element={<UserList />} />
           <Route path="/admin/devices" element={<DeviceList />} />
+          <Route path="/admin/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     )

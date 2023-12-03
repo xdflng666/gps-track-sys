@@ -17,9 +17,9 @@ import {
   UserDataTextWrapper,
 } from "src/components/Sidebar/Sidebar.styled"
 import logo from "src/assets/logo.png"
-import users from "src/assets/users.png"
-import devices from "src/assets/devices.png"
-import addUser from "src/assets/addUser.png"
+import users from "src/assets/users.svg"
+import devices from "src/assets/devices.svg"
+import addUser from "src/assets/addUser.svg"
 import userDataIcon from "src/assets/userDataIcon.png"
 import logoutIcon from "src/assets/logout.svg"
 import { useAppSelector } from "src/hooks"
@@ -97,7 +97,7 @@ const Sidebar = ({ curPage }: { curPage: number }) => {
               </SidebarNavigationText>
             </SidebarNavigationDestinationContainer>
             <SidebarNavigationDestinationContainer
-              $isActive={createNewUser}
+              $isActive={false}
               onClick={() => logOutFunction()}
             >
               <SidebarNavigationIcon src={logoutIcon} />
@@ -109,7 +109,7 @@ const Sidebar = ({ curPage }: { curPage: number }) => {
       <UserDataContainer>
         <UserDataIcon src={userDataIcon} />
         <UserDataTextWrapper>
-          <UserDataName>{user.login} </UserDataName>
+          <UserDataName>{user.name} </UserDataName>
           <UserDataRole>{roleToString(user.role)}</UserDataRole>
         </UserDataTextWrapper>
       </UserDataContainer>

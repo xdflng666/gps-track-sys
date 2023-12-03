@@ -25,7 +25,6 @@ export const PurpleLoginText = styled.span`
 `
 export const LeftSideContainer = styled.div`
   flex: 1 1 auto;
-  -webkit-box-align: center;
   align-items: center;
   display: flex;
   -webkit-box-pack: center;

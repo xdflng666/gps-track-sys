@@ -71,12 +71,18 @@ export const users : User[] = [
   {
     login: "user",
     password: "user",
-    role: Role.User
+    role: Role.User,
+    name: "user",
+    phone: 123456,
+    email : "mail@mail.com"
   },
   {
     login: "admin",
     password: "admin",
-    role: Role.Admin
+    role: Role.Admin,
+    name: "Denis",
+    phone: 123456,
+    email : "mail@mail.com"
   }
 ] 
 

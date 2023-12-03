@@ -8,7 +8,14 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  userData: { login:"",password: "", role: Role.Unloaded},
+  userData: {
+    login: "",
+    password: "",
+    role: Role.Unloaded,
+    name: "",
+    phone: 0,
+    email: "",
+  },
 }
 
 export const logIn = createAsyncThunk<User, LoginAndPassword>(
@@ -61,7 +68,7 @@ const userSlice = createSlice({
       state.userData = action.payload
       console.log("user logged out")
     })
-  }
+  },
 })
 
 export default userSlice.reducer

@@ -6,7 +6,10 @@ export const logInUser = async (loginAndPassword: LoginAndPassword) => {
     let curUser: User = {
       login: "",
       password: "",
-      role: Role.HasErrors
+      role: Role.HasErrors,
+      name: "",
+      phone: 0,
+      email : ""
     }
 
     //request to back here
@@ -37,7 +40,10 @@ export const logOutUser = async () => {
     const emptyUser: User = {
       login: "",
       password: "",
-      role: Role.LoggedOut
+      role: Role.LoggedOut,
+      name: "",
+      phone: 0,
+      email : ""
     }
 
     localStorage.setItem("curUser", JSON.stringify(emptyUser))

@@ -17,6 +17,9 @@ type DeviceData = {
 type User = {
   login: string,
   password: string,
+  name: string,
+  phone: number, 
+  email : string,
   role: Role
 }
 
